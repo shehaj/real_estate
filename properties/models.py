@@ -6,7 +6,6 @@ def year_choices():
     return [(r,r) for r in range(1900, datetime.date.today().year+1)]
 
 class Property(models.Model):
-
     YEARS = year_choices()
     PROPERTY_PLANIMETRIES = [
         ('1_1', '1 + 1'),
@@ -73,6 +72,8 @@ class Property(models.Model):
         null=False,
         blank=False
     )
+    class Meta:
+        db_table = "property"
 
 
 class City(models.Model):
@@ -82,5 +83,6 @@ class City(models.Model):
         null=False,
         blank=False
         )
-
+    class Meta:
+        db_table = "city"
 
