@@ -1,0 +1,9 @@
+{% comment %} {% extends "base.html" %} {% endcomment %}
+
+{% comment %} {% block content %} {% endcomment %}
+  <form method="post">
+    {% csrf_token %}
+    <table>{{ form }}</table>
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </form>
+{% comment %} {% endblock %} {% endcomment %}

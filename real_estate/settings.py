@@ -25,7 +25,7 @@ SECRET_KEY = '-#ocs$2ln6bpb-%@k3h4u20n3%(xw6$n#qu9(0$ah=pv(ryvie'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -122,4 +122,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+LOGIN_REDIRECT_URL = 'properties'
+LOGOUT_REDIRECT_URL = 'properties'

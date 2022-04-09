@@ -86,3 +86,11 @@ class City(models.Model):
     class Meta:
         db_table = "city"
 
+
+class Image(models.Model):
+    title = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='properties/%Y/%m/%d/', blank=True)
+    property = models.ForeignKey(to='Property', on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.title
